@@ -1,0 +1,13 @@
+services:
+  web:
+    image: nginx:latest
+    volumes:
+      - ./web/default.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - "5002:80"
+  app:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    volumes:
+      - ./app:/var/www/html
