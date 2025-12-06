@@ -7,7 +7,6 @@ services:
       - "5002:80"
   app:
     build:
-      context: ./app
       dockerfile: Dockerfile
     volumes:
       - ./app:/var/www/html
